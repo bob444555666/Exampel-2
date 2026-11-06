@@ -34,6 +34,7 @@ document.querySelector('.js-paper-button').addEventListener('click', () => handl
 document.querySelector('.js-scissors-button').addEventListener('click', () => handleMove('scissors'));
 
 document.body.addEventListener('keydown', (event) => {
+  if (event.target && ['INPUT', 'TEXTAREA'].includes(event.target.tagName)) return;
   if (event.key.toLowerCase() === 'r') handleMove('rock');
   else if (event.key.toLowerCase() === 'p') handleMove('paper');
   else if (event.key.toLowerCase() === 's') handleMove('scissors');
@@ -191,6 +192,11 @@ function connectToRoom(code) {
       setRoomStatus('Your friend has chosen. Make your move!');
     } else if (data.type === 'round') {
       hasSubmittedMove = false;
+      if (data.outcome === 'win') score.wins += 1;
+      else if (data.outcome === 'lose') score.losses += 1;
+      else score.ties += 1;
+      localStorage.setItem('score', JSON.stringify(score));
+      updateScoreElement();
       const own = data.yourMove;
       const other = data.opponentMove;
       const outcome = data.outcome;
