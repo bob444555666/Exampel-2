@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="12-rock-paper-scissors.css">
+</head>
+<body>
+  <p class="title">Rock Paper Scissors</p>
+
+  <div class="multiplayer-bar">
+    <button class="join-room-button" id="open-room">Join Room</button>
+    <span id="mode-status" class="mode-status">Playing against the computer</span>
+  </div>
+
+  <section class="room-panel" id="room-panel" hidden>
+    <div class="room-panel-heading">
+      <strong>Play with a friend</strong>
+      <button class="close-room" id="close-room" aria-label="Close">×</button>
+    </div>
+    <p class="room-help">Create a room and send the code to a friend, or join their room.</p>
+    <div class="room-actions">
+      <button id="create-room">Create Room</button>
+      <div class="join-controls">
+        <input id="room-code-input" maxlength="4" placeholder="ROOM CODE" aria-label="Room code" autocomplete="off">
+        <button id="join-room">Join</button>
+      </div>
+    </div>
+    <div id="room-details" class="room-details" hidden>
+      <div class="room-code-label">ROOM CODE</div>
+      <div class="room-code-row"><strong id="room-code">----</strong><button id="copy-room">Copy</button></div>
+      <p id="room-status" role="status">Connecting…</p>
+      <button id="leave-room" class="leave-room-button">Leave Room</button>
+    </div>
+    <p id="room-error" class="room-error" role="alert"></p>
+  </section>
+
+  <button class="move-button js-rock-button" aria-label="Rock">
+    <img src="https://raw.githubusercontent.com/bob444555666/Exampel/main/images/rock-emoji.png" class="move-icon" alt="Rock">
+  </button>
+  <button class="move-button js-paper-button" aria-label="Paper">
+    <img src="https://raw.githubusercontent.com/bob444555666/Exampel/main/images/paper-emoji.png" class="move-icon" alt="Paper">
+  </button>
+  <button class="move-button js-scissors-button" aria-label="Scissors">
+    <img src="https://raw.githubusercontent.com/bob444555666/Exampel/main/images/scissors-emoji.png" class="move-icon" alt="Scissors">
+  </button>
+
+  <p class="js-result result"></p>
+  <p class="js-moves"></p>
+  <p class="js-score score"></p>
+
+  <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+  " class="reset-score-button js-reset-score-button">Reset Score</button>
+
+  <button class="auto-play-button" onclick="autoPlay();">Auto Play</button>
+
+  <script src="12-rock-paper-scissors.js"></script>
+</body>
+</html>
