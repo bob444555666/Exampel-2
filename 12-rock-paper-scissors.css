@@ -1,0 +1,161 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.move-icon {
+  height: 50px;
+}
+
+.move-button {
+  background-color: transparent;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.score {
+  margin-top: 60px;
+}
+
+.reset-score-button,
+.auto-play-button {
+  background-color: white;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+/* Room multiplayer additions */
+.multiplayer-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  flex-wrap: wrap;
+}
+
+.join-room-button {
+  background: #fff;
+  color: #191919;
+  border: 0;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mode-status {
+  color: #bdbdbd;
+  font-size: 13px;
+}
+
+.room-panel {
+  width: min(360px, calc(100% - 28px));
+  box-sizing: border-box;
+  background: #303030;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 0 0 20px;
+}
+
+.room-panel-heading,
+.room-code-row,
+.join-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.close-room {
+  background: transparent;
+  color: white;
+  border: 0;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.room-help {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.room-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.room-actions button,
+.room-code-row button,
+.leave-room-button {
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.join-controls input {
+  min-width: 0;
+  width: 130px;
+  box-sizing: border-box;
+  padding: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.room-details {
+  border-top: 1px solid #555;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+.room-code-label {
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.room-code-row strong {
+  font-size: 25px;
+  letter-spacing: 4px;
+}
+
+#room-status {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.leave-room-button {
+  background: #555;
+  color: white;
+}
+
+.room-error {
+  color: #ff8c8c;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
