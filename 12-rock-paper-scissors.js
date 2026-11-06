@@ -153,6 +153,10 @@ function joinRoom(code) {
 }
 
 function connectToRoom(code) {
+  if (isAutoPlaying) {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
   leaveRoom(false);
   currentRoomCode = code;
   hasSubmittedMove = false;
